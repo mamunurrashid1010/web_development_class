@@ -1,0 +1,28 @@
+.div1{
+    border:2px solid gray;
+    padding:10px;
+    margin:10px;
+    /*background-image:url('../images/flower.jpg');*/
+    /*height:500px;*/
+    overflow:scroll;
+    height:200px;
+    background-color: #0dcaf0;
+}
+.div1 h1{
+    color:black;
+    text-align:center;
+}
+.div1 p{
+    color:black;
+    font-size:20px;
+    font-family: 'Lato', sans-serif;
+}
+
+#test1{
+    color:red;
+    display:block;
+    border:2px dotted green;
+    position: relative;
+    left:100px;
+    text-align:center;
+}
