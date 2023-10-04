@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Javascript</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+  </head>
+  <body>
+      <div class="container">
+          <div class="row">
+              <div class="col-sm-12 col-md-12 col-lg-12 text-center mt-5">
+                <div class="alert alert-primary" role="alert">
+                    Welcome
+                </div>
+              </div>
+          </div>
+      </div>
+
+    <script src="js/bootstrap.min.js"></script>
+    <script>
+
+        // print
+        document.write("JavaScript practice<br>");
+
+        // variable and data type
+        var name = "Hasan Mahamud"; // string
+        var roll = 10;  // integer
+        var gpa  = 3.61; // float
+        var pi   = 3.1416 // double
+        var pass = true // bool
+        var studentMarks = [90,80,50,60]; // array
+        // print
+        document.write(name+"<br>");
+
+
+        // array
+        document.write("<h6>Array example</h6>")
+        var studentName = ["faisal","salman","putul","Zahin","arafat"];
+        document.write(studentName+"<br>");
+
+
+        // object
+        document.write("<h6>Object example</h6>")
+        var studentRoll = {
+          faisal : 25,
+          salman : 26,
+          putul  : 27,
+        };
+        document.write(studentRoll.salman);
+
+
+        // conditional statement
+        document.write("<br><h6>Conditional statement example</h6>")
+        let marks= 50;
+        if(marks >= 30){
+            document.write("Pass");
+        }
+        else {
+            document.write("Fail");
+        }
+
+
+        // function definition
+        function message(){
+            document.write("Test Message");
+        }
+        // function with parameter
+        function sum(number1,number2){
+            var addition = number1+number2;
+            document.write("<br> the summation is:"+addition )
+        }
+
+
+        // function calling
+        document.write("<br><h6>Function example</h6>")
+        message();
+        sum(50,20);
+
+
+        // for loop
+        document.write("<br><h6>For loop example</h6>")
+        for(let i=0; i<5; i++){
+            document.write("hello world<br>")
+        }
+
+    </script>
+
+  </body>
+</html>
