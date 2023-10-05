@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Javascript + ES6</title>
+    </head>
+    <body>
+        <h1>Javascript + ES6</h1>
+        <div>
+            <input type="button" value="Show message" onclick="showMessage()" />
+            <input type="button" value="Show date" onclick="showDate()" />
+        </div>
+        
+
+        <script>
+            // function
+            function showMessage(){
+                alert("Hello World!");
+            }
+            function showDate(){
+                alert(Date());
+            }
+
+            // array
+            var student = ['Faisal','Salman','Putul','Arafat','Zahin'];
+            
+            // for loop array print
+            for(let i=0; i<student.length; i++){
+                document.write(student[i]+ "<br>");
+            }
+
+            // array length
+            const fruits = ["Banana", "Orange", "Apple", "Mango"];
+            let size = fruits.length;
+
+            // array short
+            const roll = [5,10,2,4];
+            roll.sort();
+            document.write(roll+"<br>");
+
+            // string length
+            let text = "Mamunur rashid";
+            document.write("Name: "+text+"<br>");
+            document.write("length:"+text.length);
+
+            // ES6
+            // let
+            var x = 10;
+            // Here x is 10
+            {
+                let x = 2;
+                // Here x is 2
+            }
+
+            // arrow function
+            const sum = (x, y) =>{
+              let addition = x+y;
+              document.write("<br>Summation is: "+addition+"<br>");
+            }
+            sum(10,50);
+
+            // for of loop
+            const cars = ["BMW", "Volvo", "Mini"];
+            let myText = "";
+
+            for (let x of cars) {
+                myText += x + " ";
+            }
+            document.write(cars);
+
+            // max number in array
+            const numbers = [23,55,21,87,56];
+            let maxValue = Math.max(...numbers);
+            document.write("<br>"+numbers+"<br>");
+            document.write("<br>Max number:"+maxValue);
+
+        </script>
+    </body>
+</html>
