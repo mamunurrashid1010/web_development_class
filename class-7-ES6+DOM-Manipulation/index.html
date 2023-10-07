@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Javascript</title>
+    </head>
+    <body>
+        <h1>Javascript ES6 Practice</h1>
+
+        <!--  example 1  -->
+        <p id="demo1">This is a test title 1</p>
+        <p id="demo2">This is a test title 2</p>
+        <!--  example 2  -->
+        <h5 id="demo3"> Test title</h5>
+
+        <!--  example   -->
+        <p>Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type </p>
+
+        <script>
+            // -------------- example 1 --------------
+            // select element
+            const element = document.getElementById('demo1');
+            // element value
+            var value = element.innerHTML;
+            // change value
+            document.getElementById('demo2').innerHTML = "Hello";
+
+            // -------------- example 2 --------------
+            // find element and change value
+            document.getElementById('demo3').innerText = "Title content changed.";
+
+            <!--  example   -->
+            document.getElementsByTagName("p")[0].style.color="red";
+            document.getElementsByTagName("p")[0].style.fontSize = "20px";
+        </script>
+    </body>
+</html>

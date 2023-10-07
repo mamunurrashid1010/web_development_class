@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Javascript DOM Manipulation</title>
+</head>
+<body>
+    <h3>Find form elements by html object collection example</h3>
+
+    <!--  Registration Form  -->
+    <form id="regForm" action="store.php">
+        Name:   <input type="text" name="name" value="Mamunur Rashid" /> <br><br>
+        Mobile: <input type="text" name="mobile" value="0123456789" /><br><br>
+        <input type="submit" value="submit">
+    </form>
+
+    <!--  main script   -->
+    <script>
+        document.write("Form Data: <br>");
+         const datas = document.forms['regForm'];
+         for (let i=0; i<datas.length;i++){
+             let value = datas.elements[i].value;
+             document.write(value+"<br>");
+         }
+    </script>
+
+</body>
+</html>

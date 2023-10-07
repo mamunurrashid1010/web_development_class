@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Javascript DOM Manipulation</title>
+</head>
+<body>
+    <h3>Find html element by class name and change content example</h3>
+
+    <!--  example 1  -->
+    <p class="demo1">Test title 1</p>
+    <p id="demo2">Test title 2</p>
+
+    <!--  example 2  -->
+    <h4 id="demo3"> Test title</h4>
+
+    <!--  main script   -->
+    <script>
+        // -------------- example 1 --------------
+        // select element by class name
+        const element = document.getElementsByClassName('demo1');
+        // element content
+        var value = element[0].innerText;
+        // change content
+        document.getElementById('demo2').innerHTML = "New content:"+value;
+
+        // -------------- example 2 --------------
+        // find element by class name and change content
+        document.getElementById('demo3').innerText = "Title content changed.";
+    </script>
+
+</body>
+</html>

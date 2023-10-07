@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Javascript DOM Manipulation</title>
+</head>
+<body>
+    <h3>Find html element by tag name and change content example</h3>
+
+    <!--  example 1  -->
+    <h5>Test title 1</h5>
+    <span id="demoId"></span>
+
+    <!--  example 1  -->
+    <h3>example 2:</h3>
+    <p>data 1</p>
+    <p>data 2</p>
+    <p>data 3</p>
+
+
+    <!--  main script   -->
+    <script>
+        // -------------- example 1 --------------
+        // select element by tag name
+        const element = document.getElementsByTagName('h5');
+        // element content
+        var content = element[0].innerText;
+        // change content
+        document.getElementById('demoId').innerHTML = "New content:"+content;
+
+        // -------------- example 2 --------------
+        // find element tag name and change content
+       const element2 = document.getElementsByTagName('p');
+       for (var i=0; i<element2.length; i++){
+           var data2 = element2[i].innerText;
+           console.log(data2);
+       }
+
+    </script>
+
+</body>
+</html>

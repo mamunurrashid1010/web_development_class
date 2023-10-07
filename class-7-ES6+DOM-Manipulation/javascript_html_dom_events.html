@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Javascript DOM Manipulation</title>
+</head>
+<body>
+    <h3>HTML DOM Event example</h3>
+
+    <!--  Example-1  -->
+    <h2>Example-1 </h2>
+    <h3 onclick="this.innerText='Welcome!'">Click here</h3>
+    <h3 onclick="changeText(this)">Change text, click here</h3>
+    <h3 onmouseover="this.innerText='Hello....'">Mouse Over</h3>
+
+    <!--  Example-2  -->
+    <h2>Example-2 </h2>
+    <button onclick="alert('Test alert message 1.')">Alert-1</button>
+    <button onclick="showMessage()">Alert-2</button><br><br>
+    <button onclick="alert(Date())">Date & Time 1</button>
+    <button onclick="showDate()">Date & Time 2</button>
+    <button onclick="showDateText()">Date & Time 3</button>
+    <p id="date"></p>
+
+
+    <!--  main script   -->
+    <script>
+        // Example-1
+        function changeText(id) {
+            id.innerHTML = 'Welcome';
+        }
+        // Example-2
+        function showMessage() {
+            alert('Test alert message 2.');
+        }
+        function showDate() {
+            alert(Date());
+        }
+        function showDateText() {
+            document.getElementById('date').innerText = Date();
+        }
+    </script>
+
+</body>
+</html>

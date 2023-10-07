@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Javascript DOM Manipulation</title>
+</head>
+<body>
+    <h3>Form Validation example</h3>
+
+    <!--  Registration Form  -->
+    <form id="regForm" action="store.php" onsubmit="return validation()">
+        Name:     <input type="text" name="name" value="" /> <br><br>
+        Mobile:   <input type="text" name="mobile" value="" /><br><br>
+        Password: <input type="password" name="password" /><br><br>
+        Repeat Password: <input type="password" name="repeat_password" /><br><br>
+        Address:  <textarea rows="3" name="address" ></textarea><br><br>
+        <input type="submit" value="submit">
+    </form>
+
+    <!--  main script   -->
+    <script>
+        function validation() {
+            let name = document.forms['regForm']['name'].value;
+            let mobile = document.forms['regForm']['mobile'].value;
+            let password = document.forms['regForm']['password'].value;
+            let repeat_password = document.forms['regForm']['repeat_password'].value;
+            let address = document.forms['regForm']['address'].value;
+            if(name == ''){
+                alert('Name is empty!');
+                return false;
+            }
+            if(mobile == ''){
+                alert('Mobile is empty!');
+                return false;
+            }
+            if(password.length<6){
+                alert("Password must be at least 6 characters long.");
+                return false;
+            }
+            if(password != repeat_password){
+                alert("password must be same!");
+                return false
+            }
+            if(address == ''){
+                alert('Address is empty!');
+                return false;
+            }
+        }
+    </script>
+
+</body>
+</html>
