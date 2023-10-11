@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Javascript</title>
+        <style>
+            #test{
+                border:2px solid black;
+                padding: 10px;
+                
+            }
+            .test1{
+                background-color: antiquewhite;
+                margin-top: 10px;
+            }
+        </style>
+        <script src="js/jquery.min.js"></script>
+    </head>
+    <body>
+        <h1>jQuery Practice</h1>
+
+        <button id="showBtn">Show</button>
+        <button id="hideBtn">Hide</button>
+
+        <button id="greenBtn">green</button>
+        <button id="redBtn">red</button>
+
+        <button id="sizeBtn">FontSize-20</button>
+
+        <input  type="color" id="colorId" value="" onchange="changeColor()">
+        <button id="colorAddBtn">Change color</button>
+
+        <button id="addClassBtn">Add class</button>
+        <button id="removeClassBtn">Remove class</button>
+        <br>
+        <div id="test">
+            <p>
+                Filler text is text that shares some characteristics of a real written text, but is random or otherwise generated. 
+                It may be used to display a sample of fonts, generate text for testing, or to spoof an e-mail spam filter.
+                It may be used to display a sample of fonts, generate text for testing, or to spoof an e-mail spam filter.
+                It may be used to display a sample of fonts, generate text for testing, or to spoof an e-mail spam filter.
+                It may be used to display a sample of fonts, generate text for testing, or to spoof an e-mail spam filter.
+            </p>
+        </div>
+        
+        
+        
+
+        <script>
+            $(document).ready(function(){
+
+                // example 1 show hide
+                $("#showBtn").click(function(){
+                    $("#test").show();
+                });
+
+                $("#hideBtn").click(function(){
+                    $("#test").hide();
+                });
+
+                // example 2 css
+                $("#greenBtn").click(function(){
+                    $("p").css("color","green");
+                });
+
+                $("#redBtn").click(function(){
+                    $("p").css("color","red");
+                });
+
+                //  add multiple css
+                $("#sizeBtn").click(function(){
+                    $("p").css({"font-size":"20px","color":"red"});
+                });
+
+                $("#colorAddBtn").click(function(){
+                    var color = $("#colorId").val();
+                    $("p").css("color",color);
+                })
+
+                // jquery DOM manipulation
+                // get content
+                var myText = $("h1").html();
+                //alert(myText)
+
+                // change content
+                $("h1").html("jquery World");
+
+                // add class, remove class
+                $("#addClassBtn").click(function(){
+                    $("#test").addClass("test1");
+                });
+
+                $("#removeClassBtn").click(function(){
+                    $("#test").removeClass("test1");
+                });
+
+
+            });
+
+            // change color
+            function changeColor(){
+                var color = $("#colorId").val();
+                $("p").css("color",color);
+            }
+
+            
+        </script>
+    </body>
+</html>
