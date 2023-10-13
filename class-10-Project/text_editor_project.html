@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title> Text Editor Project | Js DOM Manipulation</title>
+    <style>
+        .textBoxContainer{
+            width: 100%;
+        }
+        .tools{
+            width: 100%;
+            padding: 10px;
+            background-color: #1b5272;
+            color: white;
+        }
+        .tool, .textAlign{
+            display: inline;
+            padding-left: 10px;
+            padding-right: 10px;
+        }
+        .textBox{
+            width: 100%;
+            border: 2px solid #1b5272;
+            height: 300px;
+        }
+        h2{
+            text-align: center;
+        }
+        {
+
+        }
+
+    </style>
+</head>
+<body>
+    <h2>Text Editor Project</h2>
+
+    <!-- Main Body -->
+    <div class="textBoxContainer">
+        <!-- Tools -->
+        <div class="tools">
+            <!-- Text Color -->
+            <div class="tool">
+                <label>Color:</label>
+                <input id="textColor" name="textColor" type="color" onchange="changeTextColor(this.value)" />
+            </div>
+
+            <!-- Text Size -->
+            <div class="tool">
+                <label>Size:</label>
+                <input id="textSize" name="textSize" type="number" value="" onchange="changeTextSize(this.value)" style="width: 60px; height: 20px" />
+            </div>
+
+            <!-- Text Alignment -->
+            <div class="textAlign">
+                <label>Text-Align:</label>
+                <select id="textAlign" name="textAlign" onchange="changeTextAlign(this.value)" style="width: 150px; height: 27px">
+                    <option value="left">left</option>
+                    <option value="center">center</option>
+                    <option value="right">right</option>
+                    <option value="justify">justify</option>
+                </select>
+            </div>
+
+            <!-- Font Family -->
+            <div class="tool">
+                <label>Font:</label>
+                <select id="fontFamily" name="fontFamily" onchange="changeFont(this.value)" style="width: 150px; height: 27px">
+                    <option value="Arial">Arial</option>
+                    <option value="Times New Roman">Times New Roman</option>
+                    <option value="serif">serif</option>
+                    <option value="Lucida Console">Lucida Console</option>
+                    <option value="monospace">monospace</option>
+                    <option value="Courier New">Courier New</option>
+                </select>
+            </div>
+
+            <!-- Font Weight -->
+            <button id="textBold" name="textBold" value="false" onclick="changeTextBold()" style="width: 40px; height: 27px;font-weight: bold">B</button>
+
+            <!-- Font Italic -->
+            <button id="textItalic" name="textItalic" value="false" onclick="changeTextItalic()" style="width: 40px; height: 27px;font-weight: bold;font-style: italic">I</button>
+
+        </div>
+
+        <!-- Text Box -->
+        <div>
+            <textarea id="textBox" name="textBox" class="textBox" rows="20"></textarea>
+        </div>
+    </div>
+    <!-- /Main Body -->
+
+    <!--  main script   -->
+    <script>
+        // text color change
+        function changeTextColor(color) {
+            document.getElementById('textBox').style.color = color;
+        }
+
+        // text size change
+        function changeTextSize(size) {
+            document.getElementById('textBox').style.fontSize = size+"px";
+        }
+
+        // text align change
+        function changeTextAlign(textAlignValue) {
+            document.getElementById('textBox').style.textAlign = textAlignValue;
+        }
+
+        // font change
+        function changeFont(font) {
+            document.getElementById('textBox').style.fontFamily = font;
+        }
+
+        // text bold
+        function changeTextBold() {
+            var v = document.getElementById('textBold').value;
+            if(v == 'false'){
+                document.getElementById('textBox').style.fontWeight = "bold";
+                document.getElementById('textBold').value = 'true';
+            }
+            else {
+                document.getElementById('textBox').style.fontWeight = "normal";
+                document.getElementById('textBold').value = 'false';
+            }
+
+
+        }
+
+        // text italic
+        function changeTextItalic() {
+            var v = document.getElementById('textItalic').value;
+            if(v == 'false'){
+                document.getElementById('textBox').style.fontStyle = "italic";
+                document.getElementById('textItalic').value = 'true';
+            }
+            else {
+                document.getElementById('textBox').style.fontStyle = "normal";
+                document.getElementById('textItalic').value = 'false';
+            }
+        }
+
+    </script>
+
+</body>
+</html>
