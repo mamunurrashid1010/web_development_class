@@ -39,6 +39,37 @@ class ContactsController extends Controller
         ]);
 
         //return redirect()->route('contact.index');
-        return redirect()->back();
+        return redirect()->back()->with('success','Data added successfully!');
+    }
+
+    // edit
+    public function edit(Request $request){
+        $contact_id = $request->id;
+        $contact = Contacts::query()->find($contact_id);
+        return view('contact.edit',compact('contact'));
+    }
+
+    // update
+    public function update(Request $request){
+        /*
+        $edit_id = $request->id;
+        $name = $request->name;
+        $phone = $request->phone;
+        $address = $request->address;
+        */
+
+        Contacts::query()->find($request->id)->update([
+            'name'   => $request->name,
+            'phone'  => $request->phone,
+            'address'=> $request->address,
+        ]);
+
+        return redirect()->route('contact.index')->with('success','Data updated successfully!');
+    }
+
+    // delete
+    public function delete(Request $request){
+        Contacts::query()->find($request->id)->delete();
+        return redirect()->back()->with('success','Data delete successfully!');
     }
 }

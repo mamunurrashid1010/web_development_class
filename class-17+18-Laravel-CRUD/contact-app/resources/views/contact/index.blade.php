@@ -15,6 +15,20 @@
     <div class="container mt-5">
         <div class="row">
             <div class="col-md-12">
+                <!-- alert message-->
+                @if ($message = Session::get('success'))
+                    <div class="alert alert-success alert-block">
+                        <button type="button" class="close" data-dismiss="alert">×</button>
+                        <strong>{{ $message }}</strong>
+                    </div>
+                @endif
+                @if ($message = Session::get('error'))
+                    <div class="alert alert-danger alert-block">
+                        <button type="button" class="close" data-dismiss="alert">×</button>
+                        <strong>{{ $message }}</strong>
+                    </div>
+                @endif
+
                 <div>
                     <a href="{{ route('contact.form') }}"><button class="btn btn-info float-right">Add new contact</button></a>
                 </div><br>
@@ -37,8 +51,8 @@
                                 <td>{{ $contact->phone }}</td>
                                 <td>{{ $contact->address }}</td>
                                 <td>
-                                    <button class="btn btn-warning btn-sm">Edit</button>
-                                    <button class="btn btn-danger btn-sm">Delete</button>
+                                    <a href="{{route('contact.edit',$contact->id)}}"><button class="btn btn-warning btn-sm">Edit</button></a>
+                                    <a href="{{route('contact.delete',$contact->id)}}"><button class="btn btn-danger btn-sm">Delete</button></a>
                                 </td>
                             </tr>
                         @endforeach

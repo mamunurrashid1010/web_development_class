@@ -8,35 +8,50 @@
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 
-    <title>contact</title>
+    <title>contact-edit</title>
 </head>
 <body>
 
 <div class="container mt-5">
     <div class="row">
         <div class="col-md-12">
+            <!-- alert message-->
+            @if ($message = Session::get('success'))
+                <div class="alert alert-success alert-block">
+                    <button type="button" class="close" data-dismiss="alert">×</button>
+                    <strong>{{ $message }}</strong>
+                </div>
+            @endif
+            @if ($message = Session::get('error'))
+                <div class="alert alert-danger alert-block">
+                    <button type="button" class="close" data-dismiss="alert">×</button>
+                    <strong>{{ $message }}</strong>
+                </div>
+            @endif
+
+            <!-- form -->
             <div>
                 <a href="{{ route('contact.index') }}"><button class="btn btn-info float-right">All contact</button></a>
             </div><br>
             <div>
-                <h4>Contact Form</h4>
+                <h4>Edit Contact Information</h4>
             </div>
-            <form action="{{ route('contact.store') }}" method="post">
+            <form action="{{route('contact.update',$contact->id)}}" method="post">
                 @csrf
                 <div class="form-group">
                     <label for="formGroupExampleInput">Name</label>
-                    <input type="text" class="form-control" id="" name="name" value="" placeholder="Enter your name">
+                    <input type="text" class="form-control" id="" name="name" value="{{ $contact->name }}" placeholder="Enter your name">
                 </div>
                 <div class="form-group">
                     <label for="formGroupExampleInput2">Phone</label>
-                    <input type="number" class="form-control" id="" name="phone" value="" placeholder="Enter phone number">
+                    <input type="number" class="form-control" id="" name="phone" value="{{ $contact->phone }}" placeholder="Enter phone number">
                 </div>
                 <div class="form-group">
                     <label for="formGroupExampleInput2">Address</label>
-                    <input type="text" class="form-control" id="" name="address" value="" placeholder="Enter address here...">
+                    <input type="text" class="form-control" id="" name="address" value="{{ $contact->address }}" placeholder="Enter address here...">
                 </div>
                 <div class="form-group">
-                    <button class="btn btn-success" type="submit" value="submit">Submit</button>
+                    <button class="btn btn-success" type="submit" value="submit">Update now</button>
                 </div>
             </form>
 
