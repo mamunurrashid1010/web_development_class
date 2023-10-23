@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ContactsController;
+use App\Http\Controllers\CategoriesController;
 
 /*
 |--------------------------------------------------------------------------
@@ -25,3 +26,9 @@ Route::post('/contact/store',[ContactsController::class,'store'])->name('contact
 Route::get('/contact/edit/{id}',[ContactsController::class,'edit'])->name('contact.edit');
 Route::post('/contact/update/{id}',[ContactsController::class,'update'])->name('contact.update');
 Route::get('/contact/delete/{id}',[ContactsController::class,'delete'])->name('contact.delete');
+
+
+// category
+Route::get('/category',[CategoriesController::class,'index'])->name('category.index');
+Route::get('/category/create',[CategoriesController::class,'create'])->name('category.create');
+Route::post('/category/store',[CategoriesController::class,'store'])->name('category.store');
