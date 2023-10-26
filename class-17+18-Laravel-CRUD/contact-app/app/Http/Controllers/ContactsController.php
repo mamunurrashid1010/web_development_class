@@ -31,15 +31,21 @@ class ContactsController extends Controller
         //$data = $request->all();
 
         // store data
-        Contacts::query()->insert([
+        $result = Contacts::query()->insert([
             'name'  => $request->name,
             'phone' => $request->phone,
             'address' => $request->address,
             'created_at' => Carbon::now(),
         ]);
+        if($result == true){
+            return redirect()->back()->with('success','Data added successfully!');
+        }
+        else{
+            return redirect()->back()->with('error','Fail!');
+        }
 
         //return redirect()->route('contact.index');
-        return redirect()->back()->with('success','Data added successfully!');
+
     }
 
     // edit
