@@ -1,4 +1,4 @@
-@extends('layouts.master')
+@extends('admin.layouts.master')
 @section('content')
     <!-- Bread crumb and right sidebar toggle -->
     <div class="page-breadcrumb">

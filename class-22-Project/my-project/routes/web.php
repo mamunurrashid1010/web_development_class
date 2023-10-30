@@ -1,6 +1,8 @@
 <?php
 
+use App\Http\Controllers\Admin\DashboardController;
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\Website\HomeController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -14,13 +16,19 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
+# --------------------------------------- website -------------------------------------------------------
+Route::get('/',[HomeController::class,'index'])->name('website.home');
+
+
+# --------------------------------------- admin panel -------------------------------------------------------
+Route::middleware(['auth', 'verified'])->group(function () {
+    # dashboard
+    Route::get('/dashboard',[DashboardController::class,'index'])->name('dashboard');
+
 });
 
-Route::get('/dashboard', function () {
-    return view('dashboard');
-})->middleware(['auth', 'verified'])->name('dashboard');
+
+
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
