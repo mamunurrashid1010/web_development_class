@@ -21,11 +21,14 @@
                 </ul>
             </div>
         @endif
+        </div>
 
-            <h1>Hero index page</h1>
-            <a href="{{ route('hero.create') }}">
-                <button class="btn btn-info m-3">Create</button>
-            </a>
+        <div class="col-md-12">
+            <div style="float: right">
+                <a href="{{ route('hero') }}">
+                    <button class="btn btn-info m-3">Show hero</button>
+                </a>
+            </div>
         </div>
         <!-- hero form -->
         <div class="col-md-12">

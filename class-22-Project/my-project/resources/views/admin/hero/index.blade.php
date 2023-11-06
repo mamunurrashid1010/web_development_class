@@ -18,11 +18,37 @@
             </div>
             @endif
 
-            <h1>Hero index page</h1>
-            <a href="{{ route('hero.create') }}">
-                <button class="btn btn-info m-3">Create</button>
-            </a>
+            <h1>Hero</h1>
         </div>
+        <div class="col-md-12">
+            @if($hero)
+                <a href="{{ route('hero.edit') }}">
+                    <button class="btn btn-warning m-3">Edit</button>
+                </a>
+            @else
+                <a href="{{ route('hero.create') }}">
+                    <button class="btn btn-info m-3">Create</button>
+                </a>
+            @endif
+        </div>
+
+        <!-- content -->
+        <div class="col-md-6">
+            @if($hero)
+                <div class="card">
+                    <img src="{{ asset('storage/images') }}/{{$hero->image}}" class="card-img-top" alt="..." style="width: 100%; height:auto">
+                    <div class="card-body">
+                        <h5 class="card-title">{{ $hero->title1 }}</h5>
+                        <h5 class="card-title">{{ $hero->title2 }}</h5>
+                        <p class="card-text">{{ $hero->description }}</p>
+                        <a href="#" class="btn btn-primary">Get started : {{ $hero->url }}</a>
+                    </div>
+                </div>
+            @else
+                <div class="alert alert-info"> No data found.</div>
+            @endif
+        </div>
+
     </div>
 </div>
 

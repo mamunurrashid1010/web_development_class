@@ -13,7 +13,8 @@ class HeroController extends Controller
      */
     public function index()
     {
-        return view('admin.hero.index');
+        $hero = Hero::query()->first();
+        return view('admin.hero.index',compact('hero'));
     }
 
     /**
@@ -67,9 +68,10 @@ class HeroController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(string $id)
+    public function edit()
     {
-        //
+        $hero = Hero::query()->first();
+        return view('admin.hero.edit',compact('hero'));
     }
 
     /**

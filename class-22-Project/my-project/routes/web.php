@@ -29,6 +29,7 @@ Route::middleware(['auth', 'verified'])->group(function () {
     Route::get('/hero',[HeroController::class,'index'])->name('hero');
     Route::get('/hero/create',[HeroController::class,'create'])->name('hero.create');
     Route::post('/hero/store',[HeroController::class,'store'])->name('hero.store');
+    Route::get('/hero/edit',[HeroController::class,'edit'])->name('hero.edit');
 
 });
 
