@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Website;
 
 use App\Http\Controllers\Controller;
+use App\Models\Hero;
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
@@ -12,7 +13,8 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('website.home.index');
+        $hero =  Hero::query()->first();
+        return view('website.home.index',compact('hero'));
     }
 
     /**

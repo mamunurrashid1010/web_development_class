@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Hero;
+use Illuminate\Support\Facades\File;
 
 class HeroController extends Controller
 {
@@ -39,12 +40,10 @@ class HeroController extends Controller
         ]);
 
         $image = null;
-        if($request->file('image')){
-            $image = $request->file('image');
-            $imageName = time().'.'.$image->getClientOriginalExtension();
-            //$image->move(public_path('images'), $imageName);
-            $image->storeAs('images', $imageName);
-            $image = $imageName;
+        if (!empty($request->image)){
+            $image = time().'.'.$request->image->getClientOriginalExtension();
+            $request->image->move(public_path('images/hero'), $image);
+            //$image->storeAs('images', $imageName);
         }
 
         Hero::query()->create([
@@ -77,9 +76,38 @@ class HeroController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, string $id)
+    public function update(Request $request)
     {
-        //
+        $request->validate([
+            'title1' =>'required',
+            'title2' =>'required',
+            //'url' =>'required',
+            //'image' =>'required|image|mimes:png,jpg',
+            //'description' =>'required',
+        ]);
+
+        # image
+        $OldImage=Hero::query()->select('image')->first();
+        if(!empty($request->image))
+        {
+            $image = time().'.'.$request->image->extension();
+            $request->image->move(public_path('images/hero'), $image);
+            #delete old image
+            if(File::exists(public_path('images/hero/'.$OldImage->image))) {
+                File::delete(public_path('images/hero/'.$OldImage->image));
+            }
+        }
+        else
+            $image=$OldImage->image;
+
+        Hero::query()->update([
+            'title1' => $request->title1,
+            'title2' => $request->title2,
+            'url'    => $request->url,
+            'image'  => $image,
+            'description' => $request->description,
+        ]);
+        return redirect()->route('hero')->with('success','Data updated successfully!');
     }
 
     /**

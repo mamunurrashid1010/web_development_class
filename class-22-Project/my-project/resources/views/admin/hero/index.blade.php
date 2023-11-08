@@ -36,7 +36,7 @@
         <div class="col-md-6">
             @if($hero)
                 <div class="card">
-                    <img src="{{ asset('storage/images') }}/{{$hero->image}}" class="card-img-top" alt="..." style="width: 100%; height:auto">
+                    <img src="{{ asset('images/hero') }}/{{$hero->image}}" class="card-img-top" alt="..." style="width: 100%; height:auto">
                     <div class="card-body">
                         <h5 class="card-title">{{ $hero->title1 }}</h5>
                         <h5 class="card-title">{{ $hero->title2 }}</h5>

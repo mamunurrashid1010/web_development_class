@@ -30,6 +30,7 @@ Route::middleware(['auth', 'verified'])->group(function () {
     Route::get('/hero/create',[HeroController::class,'create'])->name('hero.create');
     Route::post('/hero/store',[HeroController::class,'store'])->name('hero.store');
     Route::get('/hero/edit',[HeroController::class,'edit'])->name('hero.edit');
+    Route::post('/hero/update',[HeroController::class,'update'])->name('hero.update');
 
 });
 

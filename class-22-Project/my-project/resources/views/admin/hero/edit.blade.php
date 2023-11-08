@@ -33,7 +33,7 @@
             <!-- hero form -->
             <div class="col-md-12">
                 <div class="card">
-                    <form class="form-horizontal" action="{{ route('hero.store')}}" method="post" enctype="multipart/form-data">
+                    <form class="form-horizontal" action="{{ route('hero.update')}}" method="post" enctype="multipart/form-data">
                         @csrf
                         <div class="card-body">
                             <h4 class="card-title">Edit Hero</h4><hr>
@@ -56,9 +56,9 @@
                                 </div>
                             </div>
                             <div class="form-group row">
-                                <label for="" class="col-sm-3 text-end control-label col-form-label">Background Image  <span class="text-danger"> *</span></label>
+                                <label for="" class="col-sm-3 text-end control-label col-form-label">Background Image </label>
                                 <div class="col-sm-9">
-                                    <input type="file" name="image" class="form-control" required >
+                                    <input type="file" name="image" class="form-control" >
                                 </div>
                             </div>
                             <div class="form-group row">
