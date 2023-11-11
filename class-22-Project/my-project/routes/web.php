@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Admin\AboutController;
 use App\Http\Controllers\Admin\DashboardController;
 use App\Http\Controllers\Admin\HeroController;
 use App\Http\Controllers\ProfileController;
@@ -31,6 +32,12 @@ Route::middleware(['auth', 'verified'])->group(function () {
     Route::post('/hero/store',[HeroController::class,'store'])->name('hero.store');
     Route::get('/hero/edit',[HeroController::class,'edit'])->name('hero.edit');
     Route::post('/hero/update',[HeroController::class,'update'])->name('hero.update');
+    # about
+    Route::get('/about',[AboutController::class,'index'])->name('about.index');
+    Route::get('/about/create',[AboutController::class,'create'])->name('about.create');
+    Route::post('/about/store',[AboutController::class,'store'])->name('about.store');
+    Route::get('/about/edit',[AboutController::class,'edit'])->name('about.edit');
+    Route::post('/about/update',[AboutController::class,'update'])->name('about.update');
 
 });
 
