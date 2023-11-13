@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Website;
 
 use App\Http\Controllers\Controller;
+use App\Models\About;
 use App\Models\Hero;
 use Illuminate\Http\Request;
 
@@ -14,7 +15,8 @@ class HomeController extends Controller
     public function index()
     {
         $hero =  Hero::query()->first();
-        return view('website.home.index',compact('hero'));
+        $about = About::query()->first();
+        return view('website.home.index',compact('hero','about'));
     }
 
     /**

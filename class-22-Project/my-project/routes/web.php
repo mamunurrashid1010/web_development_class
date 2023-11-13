@@ -5,6 +5,7 @@ use App\Http\Controllers\Admin\DashboardController;
 use App\Http\Controllers\Admin\HeroController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\Website\HomeController;
+use App\Http\Controllers\Website\WebsiteAboutController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -20,6 +21,7 @@ use Illuminate\Support\Facades\Route;
 
 # --------------------------------------- website -------------------------------------------------------
 Route::get('/',[HomeController::class,'index'])->name('website.home');
+Route::get('/about-page',[WebsiteAboutController::class,'index'])->name('website.about.index');
 
 
 # --------------------------------------- admin panel -------------------------------------------------------

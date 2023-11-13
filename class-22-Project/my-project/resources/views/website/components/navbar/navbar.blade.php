@@ -2,14 +2,14 @@
 <header id="header" class="fixed-top">
     <div class="container d-flex align-items-center">
 
-        <h1 class="logo me-auto"><a href="index.html">Mentor</a></h1>
+        <h1 class="logo me-auto"><a href="{{ route('website.home')}}">Mentor</a></h1>
         <!-- Uncomment below if you prefer to use an image logo -->
         <!-- <a href="index.html" class="logo me-auto"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>-->
 
         <nav id="navbar" class="navbar order-last order-lg-0">
             <ul>
-                <li><a class="active" href="index.html">Home</a></li>
-                <li><a href="about.html">About</a></li>
+                <li><a class="active" href="{{ route('website.home')}}">Home</a></li>
+                <li><a href="{{ route('website.about.index') }}">About</a></li>
                 <li><a href="courses.html">Courses</a></li>
                 <li><a href="trainers.html">Trainers</a></li>
                 <li><a href="events.html">Events</a></li>
