@@ -3,6 +3,7 @@
 use App\Http\Controllers\Admin\AboutController;
 use App\Http\Controllers\Admin\DashboardController;
 use App\Http\Controllers\Admin\HeroController;
+use App\Http\Controllers\Admin\TestimonialController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\Website\HomeController;
 use App\Http\Controllers\Website\WebsiteAboutController;
@@ -40,6 +41,10 @@ Route::middleware(['auth', 'verified'])->group(function () {
     Route::post('/about/store',[AboutController::class,'store'])->name('about.store');
     Route::get('/about/edit',[AboutController::class,'edit'])->name('about.edit');
     Route::post('/about/update',[AboutController::class,'update'])->name('about.update');
+    # testimonial
+    Route::get('/testimonial',[TestimonialController::class,'index'])->name('testimonial.index');
+    Route::get('/testimonial/create',[TestimonialController::class,'create'])->name('testimonial.create');
+    Route::post('/testimonial/store',[TestimonialController::class,'store'])->name('testimonial.store');
 
 });
 

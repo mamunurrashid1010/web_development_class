@@ -14,6 +14,8 @@
     <link href="{{ asset('assets/libs/flot/css/float-chart.css') }}" rel="stylesheet">
     <!-- Custom CSS -->
     <link href="{{ asset('dist/css/style.min.css') }}" rel="stylesheet">
+    <!-- datatable -->
+    <link href="{{ asset('assets/libs/datatables.net-bs4/css/dataTables.bootstrap4.css') }}" rel="stylesheet">
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
@@ -222,6 +224,7 @@
                         <a class="sidebar-link has-arrow waves-effect waves-dark" href="javascript:void(0)" aria-expanded="false"><i class="mdi mdi-receipt"></i><span class="hide-menu">About manage </span></a>
                         <ul aria-expanded="false" class="collapse  first-level">
                             <li class="sidebar-item"><a href="{{ route('about.index') }}" class="sidebar-link"><i class="mdi mdi-note-outline"></i><span class="hide-menu"> About</span></a></li>
+                            <li class="sidebar-item"><a href="{{ route('testimonial.index') }}" class="sidebar-link"><i class="mdi mdi-note-outline"></i><span class="hide-menu"> Testimonial</span></a></li>
                         </ul>
                     </li>
                 </ul>
@@ -266,7 +269,10 @@
 <script src="{{asset('assets/libs/flot/jquery.flot.crosshair.js')}}"></script>
 <script src="{{asset('assets/libs/flot.tooltip/js/jquery.flot.tooltip.min.js')}}"></script>
 <script src="{{asset('dist/js/pages/chart/chart-page-init.js')}}"></script>
-
+<script src="{{ asset('assets/extra-libs/DataTables/datatables.min.js') }}"></script>
+<script>
+    $('#datatable').DataTable();
+</script>
 </body>
 
 </html>
