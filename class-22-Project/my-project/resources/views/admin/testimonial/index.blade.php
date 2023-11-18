@@ -67,7 +67,10 @@
                                             <td>{{ $data->name }}</td>
                                             <td>{{ $data->title }}</td>
                                             <td>{{ $data->message }}</td>
-                                            <td></td>
+                                            <td>
+                                                <a href="{{ route('testimonial.edit',$data->id) }}"><button class="btn btn-warning"><i class="fas fa-edit"></i></button></a>
+                                                <a href="{{ route('testimonial.delete',$data->id) }}"><button class="btn btn-secondary"><i class="fas fa-trash"></i></button></a>
+                                            </td>
                                         </tr>
                                     @endforeach
                                     </tbody>

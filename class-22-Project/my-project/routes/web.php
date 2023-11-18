@@ -45,6 +45,9 @@ Route::middleware(['auth', 'verified'])->group(function () {
     Route::get('/testimonial',[TestimonialController::class,'index'])->name('testimonial.index');
     Route::get('/testimonial/create',[TestimonialController::class,'create'])->name('testimonial.create');
     Route::post('/testimonial/store',[TestimonialController::class,'store'])->name('testimonial.store');
+    Route::get('/testimonial/edit/{id}',[TestimonialController::class,'edit'])->name('testimonial.edit');
+    Route::post('/testimonial/update/{id}',[TestimonialController::class,'update'])->name('testimonial.update');
+    Route::get('/testimonial/delete/{id}',[TestimonialController::class,'delete'])->name('testimonial.delete');
 
 });
 
