@@ -4,6 +4,7 @@ use App\Http\Controllers\Admin\AboutController;
 use App\Http\Controllers\Admin\DashboardController;
 use App\Http\Controllers\Admin\HeroController;
 use App\Http\Controllers\Admin\TestimonialController;
+use App\Http\Controllers\Admin\TrainersController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\Website\HomeController;
 use App\Http\Controllers\Website\WebsiteAboutController;
@@ -48,6 +49,13 @@ Route::middleware(['auth', 'verified'])->group(function () {
     Route::get('/testimonial/edit/{id}',[TestimonialController::class,'edit'])->name('testimonial.edit');
     Route::post('/testimonial/update/{id}',[TestimonialController::class,'update'])->name('testimonial.update');
     Route::get('/testimonial/delete/{id}',[TestimonialController::class,'delete'])->name('testimonial.delete');
+    # trainers
+    Route::get('/trainer',[TrainersController::class,'index'])->name('trainer.index');
+    Route::get('/trainer/create',[TrainersController::class,'create'])->name('trainer.create');
+    Route::post('/trainer/store',[TrainersController::class,'store'])->name('trainer.store');
+    Route::get('/trainer/edit/{id}',[TrainersController::class,'edit'])->name('trainer.edit');
+    Route::post('/trainer/update/{id}',[TrainersController::class,'update'])->name('trainer.update');
+    Route::get('/trainer/delete/{id}',[TrainersController::class,'delete'])->name('trainer.delete');
 
 });
 

@@ -227,6 +227,9 @@
                             <li class="sidebar-item"><a href="{{ route('testimonial.index') }}" class="sidebar-link"><i class="mdi mdi-note-outline"></i><span class="hide-menu"> Testimonial</span></a></li>
                         </ul>
                     </li>
+                    <li class="sidebar-item">
+                        <a class="sidebar-link waves-effect waves-dark sidebar-link" href="{{ route('trainer.index')}}" aria-expanded="false"><i class="mdi mdi-chart-bar"></i><span class="hide-menu">Trainers</span></a>
+                    </li>
                 </ul>
             </nav>
             <!-- End Sidebar navigation -->
