@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\Admin\AboutController;
+use App\Http\Controllers\Admin\CourseController;
 use App\Http\Controllers\Admin\DashboardController;
 use App\Http\Controllers\Admin\HeroController;
 use App\Http\Controllers\Admin\TestimonialController;
@@ -58,6 +59,8 @@ Route::middleware(['auth', 'verified'])->group(function () {
     Route::get('/trainer/edit/{id}',[TrainersController::class,'edit'])->name('trainer.edit');
     Route::post('/trainer/update/{id}',[TrainersController::class,'update'])->name('trainer.update');
     Route::get('/trainer/delete/{id}',[TrainersController::class,'delete'])->name('trainer.delete');
+    #courses
+    Route::get('/course',[CourseController::class,'index'])->name('course.index');
 
 });
 
