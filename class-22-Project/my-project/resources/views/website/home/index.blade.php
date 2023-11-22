@@ -7,6 +7,9 @@
     <!-- ======= About Section ======= -->
     @include('website.components.homeComponents.about')
 
+    <!-- ======= Trainer Section ======= -->
+    @include('website.components.homeComponents.trainer')
+
 @endsection
 
 

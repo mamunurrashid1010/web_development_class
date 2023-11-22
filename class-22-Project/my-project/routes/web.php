@@ -8,6 +8,7 @@ use App\Http\Controllers\Admin\TrainersController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\Website\HomeController;
 use App\Http\Controllers\Website\WebsiteAboutController;
+use App\Http\Controllers\Website\WebsiteTrainerController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -24,6 +25,7 @@ use Illuminate\Support\Facades\Route;
 # --------------------------------------- website -------------------------------------------------------
 Route::get('/',[HomeController::class,'index'])->name('website.home');
 Route::get('/about-page',[WebsiteAboutController::class,'index'])->name('website.about.index');
+Route::get('/trainer-page',[WebsiteTrainerController::class,'index'])->name('website.trainer.index');
 
 
 # --------------------------------------- admin panel -------------------------------------------------------
