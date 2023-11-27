@@ -39,7 +39,7 @@
 
             <div class="col-md-12">
                 <div style="float: right">
-                    <a href="{{ route('trainer.create') }}">
+                    <a href="{{ route('course.create') }}">
                         <button class="btn btn-info m-3">Create Course</button>
                     </a>
                 </div>
@@ -54,24 +54,29 @@
                                 <tr>
                                     <th>Photo</th>
                                     <th>Name</th>
-                                    <th>Designation</th>
-                                    <th>Description</th>
+                                    <th>Category</th>
+                                    <th>Fee</th>
+                                    <th>Schedule</th>
+                                    <th>Feature</th>
                                     <th>Action</th>
                                 </tr>
                                 </thead>
                                 <tbody>
-{{--                                @foreach($trainers as $data)--}}
-{{--                                    <tr>--}}
-{{--                                        <td><img src="{{ asset('images/trainer') }}/{{ $data->image }}" width="100" height="100"></td>--}}
-{{--                                        <td>{{ $data->name }}</td>--}}
-{{--                                        <td>{{ $data->designation }}</td>--}}
-{{--                                        <td>{{ $data->description }}</td>--}}
-{{--                                        <td>--}}
-{{--                                            <a href="{{ route('trainer.edit',$data->id) }}"><button class="btn btn-warning"><i class="fas fa-edit"></i></button></a>--}}
-{{--                                            <a href="{{ route('trainer.delete',$data->id) }}"><button class="btn btn-secondary"><i class="fas fa-trash"></i></button></a>--}}
-{{--                                        </td>--}}
-{{--                                    </tr>--}}
-{{--                                @endforeach--}}
+                                @foreach($courses as $course)
+                                    <tr>
+                                        <td><img src="{{ asset('images/course') }}/{{ $course->image }}" width="100" height="100"></td>
+                                        <td>{{ $course->name }}</td>
+                                        <td>{{ $course->category }}</td>
+                                        <td>{{ $course->fee }}</td>
+                                        <td>{{ $course->schedule }}</td>
+                                        <td>{{ $course->totalFeature->count() ?? 0 }}</td>
+                                        <td>
+                                            <a href="{{ route('course.feature',$course->id) }}"><button class="btn btn-info"><i class="fas fa-plus"> Add feature</i></button></a>
+{{--                                            <a href="{{ route('trainer.edit',$course->id) }}"><button class="btn btn-warning"><i class="fas fa-edit"></i></button></a>--}}
+{{--                                            <a href="{{ route('trainer.delete',$course->id) }}"><button class="btn btn-secondary"><i class="fas fa-trash"></i></button></a>--}}
+                                        </td>
+                                    </tr>
+                                @endforeach
                                 </tbody>
                             </table>
                         </div>

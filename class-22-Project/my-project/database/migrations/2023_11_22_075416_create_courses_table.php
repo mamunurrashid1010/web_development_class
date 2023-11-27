@@ -17,7 +17,7 @@ return new class extends Migration
             $table->string('name');
             $table->text('short_desc');
             $table->longText('long_desc');
-            $table->float('free')->default(0);
+            $table->float('fee')->default(0);
             $table->integer('total_seat')->default(0);
             $table->string('schedule')->nullable();
             $table->unsignedBigInteger('trainer_id');

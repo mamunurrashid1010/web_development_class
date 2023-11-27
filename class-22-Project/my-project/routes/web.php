@@ -61,6 +61,10 @@ Route::middleware(['auth', 'verified'])->group(function () {
     Route::get('/trainer/delete/{id}',[TrainersController::class,'delete'])->name('trainer.delete');
     #courses
     Route::get('/course',[CourseController::class,'index'])->name('course.index');
+    Route::get('/course/create',[CourseController::class,'create'])->name('course.create');
+    Route::post('/course/store',[CourseController::class,'store'])->name('course.store');
+    Route::get('/course/feature/{id}',[CourseController::class,'feature'])->name('course.feature');
+    Route::post('/course/feature/store/{id}',[CourseController::class,'storeFeature'])->name('course.feature.store');
 
 });
 
