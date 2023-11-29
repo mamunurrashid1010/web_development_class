@@ -55,6 +55,7 @@
                                     <th>Photo</th>
                                     <th>Name</th>
                                     <th>Category</th>
+                                    <th>Trainer</th>
                                     <th>Fee</th>
                                     <th>Schedule</th>
                                     <th>Feature</th>
@@ -67,10 +68,12 @@
                                         <td><img src="{{ asset('images/course') }}/{{ $course->image }}" width="100" height="100"></td>
                                         <td>{{ $course->name }}</td>
                                         <td>{{ $course->category }}</td>
+                                        <td>{{ $course->trainerName->name }}</td>
                                         <td>{{ $course->fee }}</td>
                                         <td>{{ $course->schedule }}</td>
                                         <td>{{ $course->totalFeature->count() ?? 0 }}</td>
                                         <td>
+                                            <a href="{{ route('course.show',$course->id) }}"><button class="btn btn-primary"><i class="fas fa-eye"></i></button></a>
                                             <a href="{{ route('course.feature',$course->id) }}"><button class="btn btn-info"><i class="fas fa-plus"> Add feature</i></button></a>
 {{--                                            <a href="{{ route('trainer.edit',$course->id) }}"><button class="btn btn-warning"><i class="fas fa-edit"></i></button></a>--}}
 {{--                                            <a href="{{ route('trainer.delete',$course->id) }}"><button class="btn btn-secondary"><i class="fas fa-trash"></i></button></a>--}}

@@ -14,4 +14,13 @@ class Courses extends Model
     function totalFeature(){
         return $this->hasMany(CourseFeatures::class,'course_id','id');
     }
+
+    function feature(){
+        return $this->hasMany(CourseFeatures::class,'course_id','id');
+    }
+
+    function trainerName()
+    {
+        return $this->belongsTo(Trainers::class,'trainer_id','id')->select('id','name');
+    }
 }

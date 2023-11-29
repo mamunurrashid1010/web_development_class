@@ -104,9 +104,10 @@ class CourseController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(string $id)
+    public function show($id)
     {
-        //
+       $course = Courses::query()->with('feature')->find($id);
+       return view('admin.course.show',compact('course'));
     }
 
     /**

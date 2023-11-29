@@ -65,6 +65,7 @@ Route::middleware(['auth', 'verified'])->group(function () {
     Route::post('/course/store',[CourseController::class,'store'])->name('course.store');
     Route::get('/course/feature/{id}',[CourseController::class,'feature'])->name('course.feature');
     Route::post('/course/feature/store/{id}',[CourseController::class,'storeFeature'])->name('course.feature.store');
+    Route::get('/course/show/{id}',[CourseController::class,'show'])->name('course.show');
 
 });
 
