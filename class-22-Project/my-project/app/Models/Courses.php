@@ -23,4 +23,9 @@ class Courses extends Model
     {
         return $this->belongsTo(Trainers::class,'trainer_id','id')->select('id','name');
     }
+
+    function trainer()
+    {
+        return $this->belongsTo(Trainers::class,'trainer_id','id')->select('id','name','designation','description','image');
+    }
 }

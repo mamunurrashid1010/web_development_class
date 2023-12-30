@@ -9,6 +9,7 @@ use App\Http\Controllers\Admin\TrainersController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\Website\HomeController;
 use App\Http\Controllers\Website\WebsiteAboutController;
+use App\Http\Controllers\Website\WebsiteCourseController;
 use App\Http\Controllers\Website\WebsiteTrainerController;
 use Illuminate\Support\Facades\Route;
 
@@ -27,6 +28,9 @@ use Illuminate\Support\Facades\Route;
 Route::get('/',[HomeController::class,'index'])->name('website.home');
 Route::get('/about-page',[WebsiteAboutController::class,'index'])->name('website.about.index');
 Route::get('/trainer-page',[WebsiteTrainerController::class,'index'])->name('website.trainer.index');
+# course
+Route::get('/course-page',[WebsiteCourseController::class,'index'])->name('website.course.index');
+Route::get('/course-page/show/{id}',[WebsiteCourseController::class,'show'])->name('website.course.show');
 
 
 # --------------------------------------- admin panel -------------------------------------------------------
@@ -66,6 +70,7 @@ Route::middleware(['auth', 'verified'])->group(function () {
     Route::get('/course/feature/{id}',[CourseController::class,'feature'])->name('course.feature');
     Route::post('/course/feature/store/{id}',[CourseController::class,'storeFeature'])->name('course.feature.store');
     Route::get('/course/show/{id}',[CourseController::class,'show'])->name('course.show');
+    Route::get('/course/delete/{id}',[CourseController::class,'delete'])->name('course.delete');
 
 });
 

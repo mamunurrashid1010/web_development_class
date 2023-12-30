@@ -76,7 +76,7 @@
                                             <a href="{{ route('course.show',$course->id) }}"><button class="btn btn-primary"><i class="fas fa-eye"></i></button></a>
                                             <a href="{{ route('course.feature',$course->id) }}"><button class="btn btn-info"><i class="fas fa-plus"> Add feature</i></button></a>
 {{--                                            <a href="{{ route('trainer.edit',$course->id) }}"><button class="btn btn-warning"><i class="fas fa-edit"></i></button></a>--}}
-{{--                                            <a href="{{ route('trainer.delete',$course->id) }}"><button class="btn btn-secondary"><i class="fas fa-trash"></i></button></a>--}}
+                                            <a href="{{ route('course.delete',$course->id) }}"><button class="btn btn-secondary"><i class="fas fa-trash"></i></button></a>
                                         </td>
                                     </tr>
                                 @endforeach

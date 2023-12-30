@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Website;
 
 use App\Http\Controllers\Controller;
 use App\Models\About;
+use App\Models\Courses;
 use App\Models\Hero;
 use App\Models\Trainers;
 use Illuminate\Http\Request;
@@ -18,7 +19,8 @@ class HomeController extends Controller
         $hero =  Hero::query()->first();
         $about = About::query()->first();
         $trainers = Trainers::query()->take(3)->get();
-        return view('website.home.index',compact('hero','about','trainers'));
+        $courses = Courses::query()->take(3)->get();
+        return view('website.home.index',compact('hero','about','trainers','courses'));
     }
 
     /**

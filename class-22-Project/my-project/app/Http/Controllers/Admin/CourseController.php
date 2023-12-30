@@ -7,6 +7,7 @@ use App\Models\CourseFeatures;
 use App\Models\Courses;
 use App\Models\Trainers;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\File;
 
 class CourseController extends Controller
 {
@@ -129,8 +130,24 @@ class CourseController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(string $id)
-    {
-        //
+    function delete($id){
+        $course = Courses::query()->find($id);
+        $OldImage = $course->image;
+
+        # feature delete
+        //$courseFeature = CourseFeatures::query()->where('course_id',$id)->get();
+        foreach($course->feature as $feature){
+            if(File::exists(public_path('images/course/feature/'.$feature->image))) {
+                File::delete(public_path('images/course/feature/'.$feature->image));
+            }
+        }
+        CourseFeatures::query()->where('course_id',$id)->delete();
+
+        #delete old image
+        if(File::exists(public_path('images/course/'.$OldImage))) {
+            File::delete(public_path('images/course/'.$OldImage));
+        }
+        $course->delete();
+        return redirect()->back()->with('success','Data deleted successfully!');
     }
 }

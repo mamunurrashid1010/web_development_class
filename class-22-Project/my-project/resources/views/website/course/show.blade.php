@@ -1,4 +1,4 @@
-@extends('admin.layouts.master')
+@extends('website.layouts.app')
 @section('content')
     <style>
         /*--------------------------------------------------------------
@@ -119,69 +119,55 @@
             }
         }
     </style>
-    <div class="page-breadcrumb">
-        <div class="row">
-            <div class="col-12 d-flex no-block align-items-center">
-                <h4 class="page-title">Course Details</h4>
-                <div class="ms-auto text-end">
-                    <nav aria-label="breadcrumb">
-                        <ol class="breadcrumb">
-                            <li class="breadcrumb-item"><a href="{{ route('dashboard') }}">Dashboard </a></li>
-                            <li class="breadcrumb-item active" aria-current="page">Course / details</li>
-                        </ol>
-                    </nav>
-                </div>
-            </div>
+
+    <!-- ======= Breadcrumbs ======= -->
+    <div class="breadcrumbs">
+        <div class="container">
+            <h2>Courses</h2>
+            <p>Est dolorum ut non facere possimus quibusdam eligendi voluptatem. Quia id aut similique quia voluptas sit quaerat debitis. Rerum omnis ipsam aperiam consequatur laboriosam nemo harum praesentium. </p>
         </div>
     </div>
-        <!-- ======= Breadcrumbs ======= -->
-        <div class="breadcrumbs mt-1 pt-3" data-aos="fade-in">
-            <div class="container">
-{{--                <h2>Course Details</h2>--}}
-            </div>
-        </div>
-        <!-- End Breadcrumbs -->
+    <!-- End Breadcrumbs -->
 
-        <!-- ======= Cource Details Section ======= -->
-        <section id="course-details" class="course-details">
-            <div class="container" data-aos="fade-up">
+    <!-- ======= Cource Details Section ======= -->
+    <section id="course-details" class="course-details">
+        <div class="container" data-aos="fade-up">
 
-                <div class="row">
-                    <div class="col-lg-8">
-                        <img src="{{ asset('images/course') }}/{{ $course->image }}" class="img-fluid" alt="">
-                        <h3>{{ $course->name }}</h3>
-                        <p>
-                            {{ $course->long_desc }}
-                        </p>
-                    </div>
-                    <div class="col-lg-4">
-
-                        <div class="course-info d-flex justify-content-between align-items-center">
-                            <h5>Trainer</h5>
-                            <p><a href="#">{{ $course->trainerName->name }}</a></p>
-                        </div>
-
-                        <div class="course-info d-flex justify-content-between align-items-center">
-                            <h5>Course Fee</h5>
-                            <p>{{ $course->fee }} BDT</p>
-                        </div>
-
-                        <div class="course-info d-flex justify-content-between align-items-center">
-                            <h5>Available Seats</h5>
-                            <p>{{ $course->total_seat }}</p>
-                        </div>
-
-                        <div class="course-info d-flex justify-content-between align-items-center">
-                            <h5>Schedule</h5>
-                            <p>{{ $course->schedule }}</p>
-                        </div>
-
-                    </div>
+            <div class="row">
+                <div class="col-lg-8">
+                    <img src="{{ asset('images/course') }}/{{ $course->image }}" class="img-fluid" alt="">
+                    <h3>{{ $course->name }}</h3>
+                    <p>
+                        {{ $course->long_desc }}
+                    </p>
                 </div>
+                <div class="col-lg-4">
 
+                    <div class="course-info d-flex justify-content-between align-items-center">
+                        <h5>Trainer</h5>
+                        <p><a href="#">{{ $course->trainerName->name }}</a></p>
+                    </div>
+
+                    <div class="course-info d-flex justify-content-between align-items-center">
+                        <h5>Course Fee</h5>
+                        <p>{{ $course->fee }} BDT</p>
+                    </div>
+
+                    <div class="course-info d-flex justify-content-between align-items-center">
+                        <h5>Available Seats</h5>
+                        <p>{{ $course->total_seat }}</p>
+                    </div>
+
+                    <div class="course-info d-flex justify-content-between align-items-center">
+                        <h5>Schedule</h5>
+                        <p>{{ $course->schedule }}</p>
+                    </div>
+
+                </div>
             </div>
-        </section>
-    <!-- End Cource Details Section -->
+
+        </div>
+    </section><!-- End Cource Details Section -->
 
     <section id="cource-details-tabs" class="cource-details-tabs">
         <div class="container" data-aos="fade-up">
@@ -218,4 +204,6 @@
 
         </div>
     </section><!-- End Cource Details Tabs Section -->
+
 @endsection
+

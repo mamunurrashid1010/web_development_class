@@ -10,7 +10,7 @@
             <ul>
                 <li><a class="active" href="{{ route('website.home')}}">Home</a></li>
                 <li><a href="{{ route('website.about.index') }}">About</a></li>
-                <li><a href="courses.html">Courses</a></li>
+                <li><a href="{{ route('website.course.index') }}">Courses</a></li>
                 <li><a href="{{ route('website.trainer.index') }}">Trainers</a></li>
                 <li><a href="events.html">Events</a></li>
                 <li><a href="pricing.html">Pricing</a></li>
