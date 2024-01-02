@@ -3,7 +3,9 @@
 use App\Http\Controllers\Admin\AboutController;
 use App\Http\Controllers\Admin\CourseController;
 use App\Http\Controllers\Admin\DashboardController;
+use App\Http\Controllers\Admin\FeatureController;
 use App\Http\Controllers\Admin\HeroController;
+use App\Http\Controllers\Admin\PackageController;
 use App\Http\Controllers\Admin\TestimonialController;
 use App\Http\Controllers\Admin\TrainersController;
 use App\Http\Controllers\ProfileController;
@@ -31,6 +33,7 @@ Route::get('/trainer-page',[WebsiteTrainerController::class,'index'])->name('web
 # course
 Route::get('/course-page',[WebsiteCourseController::class,'index'])->name('website.course.index');
 Route::get('/course-page/show/{id}',[WebsiteCourseController::class,'show'])->name('website.course.show');
+# pricing
 
 
 # --------------------------------------- admin panel -------------------------------------------------------
@@ -71,6 +74,13 @@ Route::middleware(['auth', 'verified'])->group(function () {
     Route::post('/course/feature/store/{id}',[CourseController::class,'storeFeature'])->name('course.feature.store');
     Route::get('/course/show/{id}',[CourseController::class,'show'])->name('course.show');
     Route::get('/course/delete/{id}',[CourseController::class,'delete'])->name('course.delete');
+    #package/feature
+    Route::get('/package/feature',[FeatureController::class,'index'])->name('package.feature.index');
+    Route::post('/package/feature/store',[FeatureController::class,'store'])->name('package.feature.store');
+    #package
+    Route::get('/package',[PackageController::class,'index'])->name('package.index');
+    Route::get('/package/create',[PackageController::class,'create'])->name('package.create');
+    Route::post('/package/store',[PackageController::class,'store'])->name('package.store');
 
 });
 
