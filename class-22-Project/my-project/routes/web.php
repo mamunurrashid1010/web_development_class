@@ -77,6 +77,8 @@ Route::middleware(['auth', 'verified'])->group(function () {
     #package/feature
     Route::get('/package/feature',[FeatureController::class,'index'])->name('package.feature.index');
     Route::post('/package/feature/store',[FeatureController::class,'store'])->name('package.feature.store');
+    Route::get('/package/feature/edit/{id}',[FeatureController::class,'edit'])->name('package.feature.edit');
+    Route::post('/package/feature/update/{id}',[FeatureController::class,'update'])->name('package.feature.update');
     #package
     Route::get('/package',[PackageController::class,'index'])->name('package.index');
     Route::get('/package/create',[PackageController::class,'create'])->name('package.create');

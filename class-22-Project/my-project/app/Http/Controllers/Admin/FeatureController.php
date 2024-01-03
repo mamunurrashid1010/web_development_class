@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use App\Models\Features;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\File;
 
 class FeatureController extends Controller
 {
@@ -52,17 +53,26 @@ class FeatureController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(string $id)
+    public function edit($id)
     {
-        //
+        $feature = Features::query()->find($id);
+        return view('admin.package.feature.edit',compact('feature'));
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, string $id)
+    public function update(Request $request, $id)
     {
-        //
+        $request->validate([
+            'name' => 'required'
+        ]);
+
+        $feature = Features::query()->findOrFail($id);
+        $feature->name  = $request->name;
+        $feature->update();
+
+        return redirect()->route('package.feature.index')->with('success','Data updated successfully!');
     }
 
     /**
