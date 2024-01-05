@@ -12,6 +12,7 @@ use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\Website\HomeController;
 use App\Http\Controllers\Website\WebsiteAboutController;
 use App\Http\Controllers\Website\WebsiteCourseController;
+use App\Http\Controllers\Website\WebsitePricingController;
 use App\Http\Controllers\Website\WebsiteTrainerController;
 use Illuminate\Support\Facades\Route;
 
@@ -34,7 +35,7 @@ Route::get('/trainer-page',[WebsiteTrainerController::class,'index'])->name('web
 Route::get('/course-page',[WebsiteCourseController::class,'index'])->name('website.course.index');
 Route::get('/course-page/show/{id}',[WebsiteCourseController::class,'show'])->name('website.course.show');
 # pricing
-
+Route::get('/pricing-page',[WebsitePricingController::class,'index'])->name('website.pricing.index');
 
 # --------------------------------------- admin panel -------------------------------------------------------
 Route::middleware(['auth', 'verified'])->group(function () {

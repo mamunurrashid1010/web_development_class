@@ -175,8 +175,10 @@
                                                 <h4><sup>$</sup>{{ $package->price }}<span> / {{ $package->duration }}</span></h4>
                                                 <ul>
                                                     @foreach($package->packageFeature as $feature1)
-                                                        @php array_push($featuresIds,$feature1->packageFeature->id) @endphp
-                                                        <li>{{ $feature1->packageFeature->name }}</li>
+                                                        @if($feature1->packageFeature)
+                                                            @php array_push($featuresIds,$feature1->packageFeature->id) @endphp
+                                                            <li>{{ $feature1->packageFeature->name }}</li>
+                                                        @endif
                                                     @endforeach
 
                                                     @foreach($features as $feature)
@@ -192,9 +194,8 @@
                                                 </div>
                                             </div>
                                         </div>
+                                        @php $featuresIds=[]; @endphp
                                     @endforeach
-
-
                                 </div>
 
                             </div>

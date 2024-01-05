@@ -13,7 +13,7 @@
                 <li><a href="{{ route('website.course.index') }}">Courses</a></li>
                 <li><a href="{{ route('website.trainer.index') }}">Trainers</a></li>
                 <li><a href="events.html">Events</a></li>
-                <li><a href="pricing.html">Pricing</a></li>
+                <li><a href="{{ route('website.pricing.index') }}">Pricing</a></li>
 
                 <li class="dropdown"><a href="#"><span>Drop Down</span> <i class="bi bi-chevron-down"></i></a>
                     <ul>
